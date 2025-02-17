@@ -16,7 +16,7 @@ function  validEmail( email ) {
     if (typeof email !== "string") {
         return "Invalid";
     }
-    
+
     if (/^[.\-+_@]/.test(email)) {
         return false;
     }
@@ -34,3 +34,36 @@ function  validEmail( email ) {
 
 let emailResult = validEmail("lima@gmail.com");
 console.log(emailResult);
+
+
+// # Problem-03 : Who will Win  ( Mango / Banana ) 
+function  electionResult( votes ) {
+    if (!Array.isArray(votes)) {
+        return "Invalid";
+    }
+
+    let mangoCount = 0;
+    let bananaCount = 0;
+
+    for (let vote of votes) {
+        if (vote === "mango") {
+            mangoCount++;
+        }
+        else if (vote === "banana") {
+            bananaCount++;
+        }
+    }
+
+    if (mangoCount > bananaCount) {
+        return "Mango";
+    } 
+    else if (bananaCount > mangoCount) {
+        return "Banana";
+    } else {
+        return "Draw";
+    }   
+}
+
+let finalResult = electionResult(["mango", "banana", "mango", "banana", "mango"]);
+console.log(finalResult);
+
